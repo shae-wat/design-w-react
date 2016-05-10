@@ -4,9 +4,21 @@
   "description": "> Implementing a Design with React",
   "main": "index.js",
   "scripts": {
-  	"start": "node index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Shaelyn Watson",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.5.2",
+    "gulp-babel": "^6.1.2",
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-react": "^3.1.0",
+    "react-tools": "^0.13.3"
+  }
 }
