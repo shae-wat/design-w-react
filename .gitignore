@@ -3,6 +3,3 @@ node_modules
 *.DS_Store
 app/config/*
 app/selenium/reports/*
-app/client/styles/main.css
-coverage/
-.idea
