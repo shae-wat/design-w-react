@@ -1,7 +1,8 @@
 var http = require('http')
 var React = require('react')
 var ReactDom = require('react-dom/server')
-var App = require('./app/src/containers/App')
+var App = require('./src/containers/App')
+
  
 http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/html'})

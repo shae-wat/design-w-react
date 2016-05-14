@@ -1,5 +1,6 @@
 var React = require('react')
- 
+
+//export default class ReactionsComponent extends React.Component {
 module.exports = React.createClass({
 	// static propTypes = {
  //    reactions: React.PropTypes.array,
@@ -19,9 +20,10 @@ module.exports = React.createClass({
   render: function() {
     return (
       <div>
-        Reactions Component!
+        Reactions Component!``
       </div>
     )
   }
 });
+//}
 
