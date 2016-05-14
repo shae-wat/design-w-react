@@ -1,39 +1,26 @@
 var gulp = require('gulp')
-  , fs = require('fs')
-  , reactTools = require('react-tools')
-  , spawn = require('child_process').spawn
+  , gulpReact = require('gulp-react')
+  , gulpNodemon = require('gulp-nodemon')
+  , gulpWatch = require('gulp-watch')
  
-var transform = function(srcFile, destFile, cb) {
-  console.log('Reading %s...', srcFile)
- 
-  var src = fs.readFile(srcFile, {encoding: 'utf8'}, function(readErr, data) {
-    if (readErr) {
-      cb(readErr)
-    }
-    else {
-      console.log('Writing %s', destFile)
-      fs.writeFile(destFile, reactTools.transform(data), function(writeErr) {
-        if (writeErr) {
-          cb(writeErr)
-        }
-        else {
-          cb()
-        }
-      })
-    }
-  })
-}
- 
-gulp.task('jsx', function(cb) {
-  fs.mkdir('./lib', function(err) {
-    transform('index.jsx', './lib/index.js', function(err) {
-      cb(err)
-    })
+gulp.task('watch-jsx', ['jsx'], function() {
+  gulpWatch('**/*.jsx', { ignored: 'lib/' }, function() {
+    gulp.start('jsx')
   })
 })
  
-gulp.task('node', ['jsx'], function() {
-  spawn('node', ['./lib/index.js'], { stdio: 'inherit'})
+gulp.task('jsx', function() {
+  return gulp.src('**/*.jsx')
+             .pipe(gulpReact())
+             .pipe(gulp.dest('lib'))
+})
+ 
+gulp.task('node', ['watch-jsx'], function() {
+  gulpNodemon({
+    script: 'lib/index.js',
+    ignore: ['gulpfile.js'],
+    ext: 'js jsx'
+  })
 })
  
 gulp.task('default', function() {

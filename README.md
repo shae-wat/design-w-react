@@ -1,4 +1,4 @@
-> Implementing a Design with React
+> Implementing Design with React
 
 ## Install
 
