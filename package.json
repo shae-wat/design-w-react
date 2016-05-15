@@ -4,6 +4,8 @@
   "description": "> Implementing a Design with React",
   "main": "index.js",
   "scripts": {
+  	"dev": "webpack -d --watch",
+    "build" : "webpack -p",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
