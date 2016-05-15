@@ -13,12 +13,12 @@ export default class BaseContainer extends React.Component {
 
  	static defaultProps = {
     reactions: [
-    	{rxn: "like", img: "static/images/like"},
-    	{rxn: "love", img: "static/images/love"},
-    	{rxn: "haha", img: "static/images/haha"},
-    	{rxn: "wow", img: "static/images/wow"},
-    	{rxn: "sad", img: "static/images/sad"},
-    	{rxn: "angry", img: "static/images/angry"},
+    	{rxn: "like", img: "../static/images/like.png"},
+    	{rxn: "love", img: "../static/images/love.png"},
+    	{rxn: "haha", img: "../static/images/haha.png"},
+    	{rxn: "wow", img: "../static/images/wow.png"},
+    	{rxn: "sad", img: "../static/images/sad.png"},
+    	{rxn: "angry", img: "../static/images/angry.png"},
     ], 
   };
   

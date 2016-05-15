@@ -9,10 +9,11 @@ class BaseComponent extends React.Component {
     this.muiDefaultProps = {
       backgroundStyle: {
         margin: '15px',
+        paddingTop: '150px',
         height: '400px',
         backgroundColor: '#E6E6E6',
         borderRight: '5px solid #81A2CA',
-        borderBottom: '5px solid #81A2CA'
+        borderBottom: '5px solid #81A2CA',
       },
     };
   }
@@ -21,7 +22,7 @@ class BaseComponent extends React.Component {
   	console.log('BaseComponent this.props', this.props)
     return (
     	<div style={this.muiDefaultProps.backgroundStyle}>
-    		<ReactionsComponent />
+    		<ReactionsComponent {...this.props}/>
     	</div>
   	);
   }
