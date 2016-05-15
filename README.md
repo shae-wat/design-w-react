@@ -5,6 +5,7 @@
 Clone repository and run:
 
 ```sh
+$ npm install
 $ open index.html
 $ npm run dev
 ```
