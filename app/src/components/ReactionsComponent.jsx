@@ -1,4 +1,5 @@
 var React = require('react')
+import ReactionComponent from './ReactionComponent';
 
 export default class ReactionsComponent extends React.Component {
 	static propTypes = {
@@ -6,13 +7,11 @@ export default class ReactionsComponent extends React.Component {
   };
 
   static defaultProps = {
-    reactions: [
-    	{rxn: "like", img: "static/images/like"},
-    ],
+    reactions: null,
   };
 
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
 
     this.muiDefaultProps = {
       componentStyle: {
@@ -23,19 +22,27 @@ export default class ReactionsComponent extends React.Component {
         backgroundColor: 'white',
         border: '1px solid #81A2CA',
         borderRadius: '45px',
+        display: 'block',
       },
     };
   }
 
   render() {
 
+  	let reactionComponents = [];
   	for (let rxn in this.props.reactions){
   		console.log('rxn', this.props.reactions[rxn])
+  		reactionComponents.push(
+  			<ReactionComponent 
+  				key={`rxncomponent-${this.props.reactions[rxn].rxn}`}
+        	rxnString={this.props.reactions[rxn].rxn} 
+        	rxnImage={this.props.reactions[rxn].img} />
+			);
   	}
 
     return (
       <div style={this.muiDefaultProps.componentStyle}>
-        {this.props.reactions[0].rxn}
+        {reactionComponents}
       </div>
     )
   }
