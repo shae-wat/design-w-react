@@ -5,8 +5,8 @@
 Clone repository and run:
 
 ```sh
-$ npm install
-$ gulp
+$ open index.html
+$ npm run dev
 ```
 
 

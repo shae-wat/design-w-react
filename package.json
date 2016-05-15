@@ -4,8 +4,7 @@
   "description": "> Implementing a Design with React",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack -d --watch",
-    "build": "webpack -p"
+    "dev": "webpack -d --watch"
   },
   "author": "Shaelyn Watson",
   "license": "ISC",
