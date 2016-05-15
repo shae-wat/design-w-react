@@ -21,10 +21,8 @@ const sassPaths = {
 })
  
 gulp.task('jsx', function() {
-  return gulp.src('./app/index.js')
-             .pipe(babel({
-                  presets: [es2015]
-              }))
+  return gulp.src('**/*.jsx')
+             .pipe(babel())
              .pipe(gulp.dest('dist'))
 })
  
