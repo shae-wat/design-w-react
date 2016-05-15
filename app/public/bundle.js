@@ -20701,8 +20701,6 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactDom = __webpack_require__(/*! react-dom */ 33);
-	
 	var _BaseComponent = __webpack_require__(/*! ../components/BaseComponent.jsx */ 169);
 	
 	var _BaseComponent2 = _interopRequireDefault(_BaseComponent);
@@ -20717,35 +20715,30 @@
 	
 	// @connect(
 	//   state => ({
-	//     error: state.airport.error,
-	//     loading: state.airport.loading,
-	//     loaded: state.airport.loaded,
+	//     reactions: state.ui.availableReactions,
 	//   })
 	// )
 	
 	var BaseContainer = function (_React$Component) {
 	  _inherits(BaseContainer, _React$Component);
 	
-	  function BaseContainer(props) {
+	  function BaseContainer() {
 	    _classCallCheck(this, BaseContainer);
 	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(BaseContainer).call(this, props));
-	
-	    _this.muiDefaultProps = {
-	      statusTextStyle: {
-	        margin: 0,
-	        padding: '5px',
-	        fontSize: '35px',
-	        verticalAlign: 'middle'
-	      },
-	      maxHeight: 700,
-	      autoWidth: true
-	    };
-	    return _this;
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(BaseContainer).apply(this, arguments));
 	  }
 	
 	  _createClass(BaseContainer, [{
 	    key: 'render',
+	
+	    // reactions: [
+	    // 	{rxn: ‘like’, img: ‘static/images/like’},
+	    // 	{rxn: ‘love’, img: ‘static/images/love’},
+	    // 	{rxn: ‘haha’, img: ‘static/images/haha’},
+	    // 	{rxn: ‘wow’, img: ‘static/images/wow’},
+	    // 	{rxn: ‘sad’, img: ‘static/images/sad’},
+	    // 	{rxn: ‘angry’, img: ‘static/images/angry’},
+	    // ],
 	    value: function render() {
 	      return _react2.default.createElement(_BaseComponent2.default, this.props);
 	    }
@@ -20757,9 +20750,7 @@
 	BaseContainer.propTypes = {
 	  reactions: _react.PropTypes.array
 	};
-	BaseContainer.defaultProps = {
-	  reactions: null
-	};
+	BaseContainer.defaultProps = {};
 	exports.default = BaseContainer;
 
 /***/ },

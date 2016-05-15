@@ -1,12 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-import {render} from 'react-dom';
 import BaseComponent from '../components/BaseComponent.jsx';
 
 // @connect(
 //   state => ({
-//     error: state.airport.error,
-//     loading: state.airport.loading,
-//     loaded: state.airport.loaded,
+//     reactions: state.ui.availableReactions,
 //   })
 // )
 export default class BaseContainer extends React.Component {
@@ -15,24 +12,16 @@ export default class BaseContainer extends React.Component {
   };
 
  	static defaultProps = {
-    reactions: null,
+    // reactions: [
+    // 	{rxn: ‘like’, img: ‘static/images/like’},
+    // 	{rxn: ‘love’, img: ‘static/images/love’},
+    // 	{rxn: ‘haha’, img: ‘static/images/haha’},
+    // 	{rxn: ‘wow’, img: ‘static/images/wow’},
+    // 	{rxn: ‘sad’, img: ‘static/images/sad’},
+    // 	{rxn: ‘angry’, img: ‘static/images/angry’},
+    // ], 
   };
   
-  constructor(props) {
-    super(props);
-
-    this.muiDefaultProps = {
-      statusTextStyle: {
-        margin: 0,
-        padding: '5px',
-        fontSize: '35px',
-        verticalAlign: 'middle',
-      },
-      maxHeight: 700,
-      autoWidth: true,
-    };
-  }
-
   render () {
     return (
     	<BaseComponent {...this.props}/>
