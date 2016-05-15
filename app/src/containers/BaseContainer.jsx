@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import {render} from 'react-dom';
 import BaseComponent from '../components/BaseComponent.jsx';
 
@@ -10,13 +10,13 @@ import BaseComponent from '../components/BaseComponent.jsx';
 //   })
 // )
 export default class BaseContainer extends React.Component {
-	// static propTypes = {
- //    reactions: PropTypes.array,
- //  };
+	static propTypes = {
+    reactions: PropTypes.array,
+  };
 
- 	// static defaultProps = {
-  //   reactions: null
-  // };
+ 	static defaultProps = {
+    reactions: null,
+  };
   
   constructor(props) {
     super(props);

@@ -20726,14 +20726,6 @@
 	var BaseContainer = function (_React$Component) {
 	  _inherits(BaseContainer, _React$Component);
 	
-	  // static propTypes = {
-	  //    reactions: PropTypes.array,
-	  //  };
-	
-	  // static defaultProps = {
-	  //   reactions: null
-	  // };
-	
 	  function BaseContainer(props) {
 	    _classCallCheck(this, BaseContainer);
 	
@@ -20762,6 +20754,12 @@
 	  return BaseContainer;
 	}(_react2.default.Component);
 	
+	BaseContainer.propTypes = {
+	  reactions: _react.PropTypes.array
+	};
+	BaseContainer.defaultProps = {
+	  reactions: null
+	};
 	exports.default = BaseContainer;
 
 /***/ },
@@ -20805,6 +20803,7 @@
 	  _createClass(BaseComponent, [{
 	    key: 'render',
 	    value: function render() {
+	      console.log('BaseComponent this.props', this.props);
 	      return _react2.default.createElement(
 	        'p',
 	        null,
