@@ -5,10 +5,13 @@
 Clone repository and run:
 
 ```sh
+$ cd app
 $ npm install
-$ open index.html
 $ npm run dev
+$ open index.html
 ```
+
+Node version: 5.8.0
 
 
 
