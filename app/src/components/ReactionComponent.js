@@ -18,15 +18,27 @@ export default class ReactionComponent extends React.Component {
         margin: 0,
         display: 'inline-block',
         width: '50px',
+        height: '50px',
       },
       imgStyle: {
         width: '50px',
         height: '50px',
       },
+      expandedImgStyle: {
+        width: '60px',
+        height: '60px',
+      },
       labelStyle: {
-        margin: '0',
-        width: '35px',
+        margin: 0,
+        width: '100%',
         display: 'block',
+        backgroundColor: 'black',
+        color: 'white',
+        padding: '3px',
+        borderRadius: '8px',
+        textAlign: 'center',
+        textTransform: 'capitalize',
+        zIndex: '20'
       },
     };
     this.state = {
@@ -36,19 +48,16 @@ export default class ReactionComponent extends React.Component {
   }
 
   _handleOnHover = () => {
-    //console.log('on hover')
     this.setState({isExpanded: true})
   }
 
   _handleOnHoverLeave = () => {
-    //console.log('on leave')
     this.setState({isExpanded: false})
   }
 
   render() {
     let label;
     if (this.state.isExpanded){
-      console.log('isExpanded!!!!!')
       label=(<p style={this.muiDefaultProps.labelStyle}>{this.props.rxnString}</p>);
     }
 
@@ -60,7 +69,7 @@ export default class ReactionComponent extends React.Component {
           key={`img-${this.props.rxnString}`}
           onMouseOver={this._handleOnHover}
           onMouseLeave={this._handleOnHoverLeave}
-          style={this.muiDefaultProps.imgStyle}
+          style={this.state.isExpanded ? this.muiDefaultProps.expandedImgStyle : this.muiDefaultProps.imgStyle}
           src={this.props.rxnImage}/>
       </div>
     )
