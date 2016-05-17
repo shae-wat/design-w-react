@@ -12,13 +12,13 @@ export default class ReactionsComponent extends React.Component {
 
   constructor(props) {
     super(props);
-
     this.muiDefaultProps = {
       componentStyle: {
         marginRight: 'auto',
         marginLeft: 'auto',
         padding: '10px',
-        maxWidth: '300px',
+        maxWidth: '350px',
+        height: '40px',
         backgroundColor: 'white',
         border: '1px solid #81A2CA',
         borderRadius: '45px',
@@ -28,10 +28,8 @@ export default class ReactionsComponent extends React.Component {
   }
 
   render() {
-
   	let reactionComponents = [];
   	for (let rxn in this.props.reactions){
-  		console.log('rxn', this.props.reactions[rxn])
   		reactionComponents.push(
   			<ReactionComponent 
   				key={`rxncomponent-${this.props.reactions[rxn].rxn}`}
